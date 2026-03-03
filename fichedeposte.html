@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fiche de Poste - Assistant Comptable</title>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #e0e0e0; padding: 40px; color: #333; }
+    
+    .job-sheet { 
+        background: white; 
+        max-width: 750px; 
+        margin: auto; 
+        padding: 50px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+        position: relative;
+        border: 1px solid #ccc;
+    }
+
+    .header-band { background: #2c3e50; color: white; padding: 20px; margin: -50px -50px 30px -50px; text-align: center; }
+    h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+
+    /* Le mot interactif sans curseur pointeur */
+    #trigger-word {
+        cursor: default; /* Pas de main, reste une flèche ou un curseur de texte */
+        user-select: none;
+    }
+
+    h2 { color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 30px; }
+    
+    .absurd { color: #c0392b; font-weight: bold; }
+
+    ul { line-height: 1.6; }
+    li { margin-bottom: 8px; }
+
+    /* Zone des indices cachés */
+    .hidden-indices {
+        display: none;
+        background: #fffbe6;
+        border: 2px dashed #f1c40f;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .secret-mail { color: #2c3e50; border-left: 3px solid #f1c40f; padding-left: 10px; margin-bottom: 15px; }
+    .trompeur { color: #7f8c8d; font-style: italic; font-size: 0.85em; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .show { display: block !important; }
+
+</style>
+</head>
+<body>
+
+<div class="job-sheet">
+
+    <div class="header-band">
+        <h1>Fiche de <span id="trigger-word" onclick="revealHiddenData()">Poste</span></h1>
+        <p>Assistant Comptable (H/F)</p>
+    </div>
+
+    <div id="indices-box" class="hidden-indices">
+        <p class="secret-mail"><strong>📧 Mail du Manager (Confidentiel) :</strong><br>"On cherche quelqu’un de vraiment solide en <b>droit social</b>, rien à voir avec l’informatique. Ignorez les erreurs de rédaction du stagiaire."</p>
+        <hr style="border: 0; border-top: 1px solid #f1c40f; margin: 10px 0;">
+        <p class="trompeur"><strong>✍️ Note manuscrite :</strong><br>"Le poste pourrait évoluer vers des missions techniques." (Attention : indice peu fiable)</p>
+    </div>
+
+    <h2>Missions principales</h2>
+    <ul>
+        <li>Saisie des écritures comptables quotidiennes.</li>
+        <li>Rapprochements bancaires et suivi de la trésorerie.</li>
+        <li>Préparation des déclarations de TVA.</li>
+        <li>Gestion de la facturation client et relances des impayés.</li>
+    </ul>
+
+    <h2>Compétences requises</h2>
+    <ul>
+        <li>Maîtrise des logiciels comptables (Sage, Cegid ou similaire).</li>
+        <li>Excellente utilisation d'Excel (tableaux croisés dynamiques).</li>
+        <li>Rigueur administrative et sens de l'organisation.</li>
+    </ul>
+
+    <h2>Exigences impératives</h2>
+    <ul>
+        <li>Diplôme : BTS Comptabilité Gestion ou DCG.</li>
+        <li class="absurd">Maîtrise avancée du langage Python (obligatoire pour l'automatisation).</li>
+        <li class="absurd">Permis poids lourd (C1E) exigé pour déplacements spécifiques.</li>
+        <li>Expérience : 2 à 3 ans sur un poste similaire.</li>
+    </ul>
+</div>
+
+<script>
+    function revealHiddenData() {
+        var box = document.getElementById('indices-box');
+        box.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
